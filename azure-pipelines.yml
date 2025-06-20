@@ -14,10 +14,10 @@ steps:
   inputs:
     OTSService: 'DevOps TestHub'
     teamspace: 'Initial Team Space'
-    project: 'SBD SAP Tests'
+    project: 'Emeral_Demo'
     branch: 'main'
-    repo: 'https://github.com/virtualmonster/SBD.git'
-    filePath: 'google/google homepage.dtx.yaml'
+    repo: 'https://github.com/oresteegidio/EmeraldDemo'
+    filePath: 'Emerald-UI-Tests/Bath_Search.testsuite'
     exportReport: '$(Agent.TempDirectory)/exportReport.xml'
 - task: PublishTestResults@2
   condition: always()
@@ -27,4 +27,4 @@ steps:
     searchFolder: '$(Agent.TempDirectory)'
     mergeTestResults: true
     failTaskOnFailedTests: true
-    testRunTitle: 'SBD SAP Tests'
+    testRunTitle: 'SBD Test'
