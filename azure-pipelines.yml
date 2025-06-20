@@ -10,9 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: RTASTask@1
+- task: OTSTask@3
   inputs:
-    OTSService: 'DevOps TestHub'
+    OTSService: 'OresteTestHub'
     teamspace: 'Initial Team Space'
     project: 'Emeral_Demo'
     branch: 'main'
@@ -28,4 +28,4 @@ steps:
     mergeTestResults: true
     failTaskOnFailedTests: true
     testRunTitle: 'SBD Test'
-  
+ 
