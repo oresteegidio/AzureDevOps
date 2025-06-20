@@ -1,0 +1,30 @@
+## Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: OTSTask@3
+  inputs:
+    OTSService: 'DevOps TestHub'
+    teamspace: 'Initial Team Space'
+    project: 'SBD SAP Tests'
+    branch: 'main'
+    repo: 'https://github.com/virtualmonster/SBD.git'
+    filePath: 'google/google homepage.dtx.yaml'
+    exportReport: '$(Agent.TempDirectory)/exportReport.xml'
+- task: PublishTestResults@2
+  condition: always()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '$(Agent.TempDirectory)/exportReport.xml'
+    searchFolder: '$(Agent.TempDirectory)'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    testRunTitle: 'SBD SAP Tests'
