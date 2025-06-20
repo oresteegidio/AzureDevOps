@@ -14,7 +14,7 @@ steps:
   inputs:
     OTSService: 'OresteTestHub'
     teamspace: 'Initial Team Space'
-    project: 'Emeral_Demo'
+    project: 'Emerald_Demo'
     branch: 'main'
     repo: 'https://github.com/oresteegidio/EmeraldDemo'
     filePath: 'Emerald-UI-Tests/Bath_Search.testsuite'
