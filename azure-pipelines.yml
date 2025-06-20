@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: OTSTask@3
+- task: RTASTask@1
   inputs:
     OTSService: 'DevOps TestHub'
     teamspace: 'Initial Team Space'
@@ -28,3 +28,4 @@ steps:
     mergeTestResults: true
     failTaskOnFailedTests: true
     testRunTitle: 'SBD Test'
+  
